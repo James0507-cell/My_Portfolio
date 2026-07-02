@@ -88,6 +88,7 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      overflow-x: hidden;
     }
 
     body {
@@ -379,7 +380,8 @@
     /* ─── Navigation ─── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0; left: 0;
+      width: 100vw;
       z-index: 100;
       background: rgba(245, 243, 239, 0.8);
       backdrop-filter: blur(16px);
@@ -1503,7 +1505,8 @@
     /* ─── Lightbox Modal ─── */
     .lightbox {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0; left: 0;
+      width: 100vw; height: 100%;
       background: rgba(14, 13, 12, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -1777,6 +1780,14 @@
       /* Section sticker overflow */
       #project .sticker,
       #hci-blueprint .sticker {
+        display: none;
+      }
+      
+      /* Hide decorative background elements that can cause horizontal overflow on mobile */
+      .structural-grid-line {
+        display: none;
+      }
+      .bg-glow-blob {
         display: none;
       }
       
